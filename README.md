@@ -397,9 +397,6 @@ sequenceDiagram
 | **⚡ AI WebSocket**  | WebSocket         |        `8000` | `ws://localhost:8000/...` |
 | **🗄️ Database**    | MongoDB Atlas     |         Cloud | Cấu hình qua `MONGO_URI`  |
 
-> [!IMPORTANT]
-> Tên endpoint WebSocket chính xác cần đối chiếu với mã nguồn AI Server hoặc tài liệu API trong repository.
-
 ---
 
 <a id="cong-nghe-su-dung"></a>
@@ -672,8 +669,6 @@ CORS_ORIGIN=http://localhost:5173
 | `JWT_SECRET`    | Khóa bí mật dùng ký JWT           | `your_secret_key`       |
 | `CORS_ORIGIN`   | Domain frontend được phép gọi API | `http://localhost:5173` |
 
-> [!CAUTION]
-> Không đưa mật khẩu thật, secret thật hoặc connection string thật lên GitHub.
 
 ---
 
@@ -796,7 +791,6 @@ Dữ liệu WebSocket có thể bao gồm:
 | `feedback`     | Gợi ý sửa lỗi nếu có         |
 | `timestamp`    | Thời điểm xử lý              |
 
-> Tên trường dữ liệu cần đối chiếu với mã nguồn WebSocket thực tế.
 
 ---
 

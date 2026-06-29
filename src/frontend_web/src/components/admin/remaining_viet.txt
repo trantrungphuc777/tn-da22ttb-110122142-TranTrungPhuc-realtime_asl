@@ -1,0 +1,536 @@
+AdminBadges.jsx:19: Thường
+AdminBadges.jsx:20: Trung Cấp
+AdminBadges.jsx:21: Hiếm
+AdminBadges.jsx:22: Sử Thi
+AdminBadges.jsx:23: Huyền Thoại
+AdminBadges.jsx:29: Nộp bài đầu tiên
+AdminBadges.jsx:30: Đạt 100 điểm
+AdminBadges.jsx:31: Streak 3 ngày
+AdminBadges.jsx:32: Streak 7 ngày
+AdminBadges.jsx:33: Streak 14 ngày
+AdminBadges.jsx:34: Streak 30 ngày
+AdminBadges.jsx:35: Streak 60 ngày
+AdminBadges.jsx:36: Số lần luyện tập
+AdminBadges.jsx:37: Độ chính xác ≥ 95%
+AdminBadges.jsx:38: Độ chính xác 100%
+AdminBadges.jsx:39: Điểm TB ≥ 70
+AdminBadges.jsx:40: Điểm TB ≥ 80
+AdminBadges.jsx:41: Điểm TB ≥ 90
+AdminBadges.jsx:42: Điểm TB ≥ 95
+AdminBadges.jsx:43: Số bài tập hoàn thành
+AdminBadges.jsx:44: Số bài kiểm tra đã làm
+AdminBadges.jsx:45: 5 bài liên tiếp 100đ
+AdminBadges.jsx:46: 10 bài liên tiếp 100đ
+AdminBadges.jsx:47: Hoàn thành nhanh
+AdminBadges.jsx:48: Tùy chỉnh
+AdminBadges.jsx:231: Tên tiếng Việt và tiếng Anh là bắt buộc!
+AdminBadges.jsx:276: Tên huy hiệu
+AdminBadges.jsx:326: VD: Học Viên Chăm Chỉ
+AdminBadges.jsx:342: Mô tả điều kiện...
+AdminBadges.jsx:437: Không thể tải dữ liệu huy hiệu!
+AdminBadges.jsx:450: Đã cập nhật huy hiệu!
+AdminBadges.jsx:453: Đã tạo huy hiệu mới!
+AdminBadges.jsx:457: Thao tác thất bại!
+AdminBadges.jsx:465: Thao tác thất bại!
+AdminBadges.jsx:472: Đã xóa huy hiệu!
+AdminBadges.jsx:474: Thao tác thất bại!
+AdminBadges.jsx:515: Tổng
+AdminBadges.jsx:516: Hệ thống
+AdminBadges.jsx:517: Tùy chỉnh
+AdminBadges.jsx:518: Đang bật
+AdminBadges.jsx:519: Đã trao
+AdminBadges.jsx:532: Tìm huy hiệu...
+AdminBadges.jsx:618: Tất cả độ hiếm
+AdminClasses.jsx:46: Không thể tải danh sách lớp!
+AdminClasses.jsx:72: Không thể tải chi tiết lớp!
+AdminClasses.jsx:79: Tên lớp và giảng viên là bắt buộc!
+AdminClasses.jsx:82: Đã tạo lớp học!
+AdminClasses.jsx:85: Thao tác thất bại!
+AdminClasses.jsx:89: Xóa lớp học này?
+AdminClasses.jsx:92: Đã xóa lớp học!
+AdminClasses.jsx:93: Thao tác thất bại!
+AdminClasses.jsx:110: Tên lớp và giảng viên là bắt buộc!
+AdminClasses.jsx:113: Đã cập nhật lớp học!
+AdminClasses.jsx:116: Thao tác thất bại!
+AdminClasses.jsx:121: Vui lòng chọn học viên!
+AdminClasses.jsx:124: Đã thêm học viên!
+AdminClasses.jsx:125: Thao tác thất bại!
+AdminClasses.jsx:130: Xóa học viên khỏi lớp này?
+AdminClasses.jsx:133: Đã xóa học viên khỏi lớp!
+AdminClasses.jsx:134: Thao tác thất bại!
+AdminClasses.jsx:139: Vui lòng chọn lớp đích!
+AdminClasses.jsx:142: Đã chuyển học viên sang lớp mới!
+AdminClasses.jsx:145: Thao tác thất bại!
+AdminClasses.jsx:150: Vui lòng chọn giảng viên!
+AdminClasses.jsx:153: Đã thay đổi giảng viên phụ trách!
+AdminClasses.jsx:155: Thao tác thất bại!
+AdminClasses.jsx:158: Cơ bản
+AdminClasses.jsx:180: Tổng lớp học
+AdminClasses.jsx:190: Tạo lớp học
+AdminClasses.jsx:197: Tìm theo tên lớp...
+AdminClasses.jsx:232: Chi tiết
+AdminClasses.jsx:233: Chỉnh sửa lớp
+AdminClasses.jsx:272: Mô tả lớp học...
+AdminClasses.jsx:278: -- Chọn giảng viên --
+AdminClasses.jsx:286: Cơ bản
+AdminClasses.jsx:287: Trung cấp
+AdminClasses.jsx:288: Nâng cao
+AdminClasses.jsx:321: Mô tả lớp học...
+AdminClasses.jsx:328: Cơ bản
+AdminClasses.jsx:329: Trung cấp
+AdminClasses.jsx:330: Nâng cao
+AdminClasses.jsx:337: -- Chọn giảng viên --
+AdminClasses.jsx:367: Tổng học viên
+AdminClasses.jsx:368: Điểm TB
+AdminClasses.jsx:369: Hoàn thành
+AdminClasses.jsx:386: Thay đổi
+AdminClasses.jsx:395: -- Chọn học viên --
+AdminClasses.jsx:402: Thêm
+AdminClasses.jsx:420: Chuyển lớp
+AdminClasses.jsx:423: Xóa khỏi lớp
+AdminClasses.jsx:446: -- Chọn lớp đích --
+AdminClasses.jsx:465: -- Chọn giảng viên mới --
+AdminContent.jsx:12: Ký hiệu chữ cái
+AdminContent.jsx:13: Từ vựng
+AdminContent.jsx:14: Câu giao tiếp
+AdminContent.jsx:62: Vui lòng nhập nội dung!
+AdminContent.jsx:68: Đã thêm mới!
+AdminContent.jsx:70: Thao tác thất bại!
+AdminContent.jsx:74: Vui lòng nhập nội dung!
+AdminContent.jsx:79: Đã cập nhật!
+AdminContent.jsx:81: Thao tác thất bại!
+AdminContent.jsx:88: Đã xóa!
+AdminContent.jsx:89: Thao tác thất bại!
+AdminContent.jsx:103: Khác
+AdminContent.jsx:143: Tổng nội dung
+AdminContent.jsx:144: Tab hiện tại
+AdminContent.jsx:158: Thêm mới
+AdminContent.jsx:191: Tất cả chủ đề
+AdminContent.jsx:233: Từ
+AdminContent.jsx:307: Nhập nghĩa tiếng Việt...
+AdminContent.jsx:315: -- Chọn chủ đề --
+AdminContent.jsx:326: Cập nhật
+AdminDashboard.jsx:173: Đã cập nhật dữ liệu!
+AdminDashboard.jsx:174: Không thể tải dữ liệu dashboard!
+AdminDashboard.jsx:204: Thực hành
+AdminDashboard.jsx:211: Hoàn thành
+AdminDashboard.jsx:212: Đúng
+AdminDashboard.jsx:214: Hoàn thành
+AdminDashboard.jsx:215: Nhận diện
+AdminDashboard.jsx:263: Đang tải...
+AdminDashboard.jsx:271: Người dùng
+AdminDashboard.jsx:273: Học viên
+AdminDashboard.jsx:274: Giảng viên
+AdminDashboard.jsx:275: Hoạt động
+AdminDashboard.jsx:276: Bị khóa
+AdminDashboard.jsx:277: Mới hôm nay
+AdminDashboard.jsx:278: Mới tháng này
+AdminDashboard.jsx:279: Tổng tài khoản
+AdminDashboard.jsx:285: Học tập
+AdminDashboard.jsx:287: Bài tập đã tạo
+AdminDashboard.jsx:288: Bài kiểm tra đã tạo
+AdminDashboard.jsx:289: Hoàn thành hôm nay
+AdminDashboard.jsx:290: Hoàn thành tháng này
+AdminDashboard.jsx:296: Hệ thống
+AdminDashboard.jsx:318: Đang online
+AdminDashboard.jsx:319: TK mới hôm nay
+AdminDashboard.jsx:320: Huy hiệu đã trao
+AdminDashboard.jsx:329: Biểu đồ phân tích
+AdminDashboard.jsx:333: Tăng trưởng người dùng
+AdminDashboard.jsx:336: Ngày
+AdminDashboard.jsx:356: Người dùng mới
+AdminDashboard.jsx:365: Hoạt động học tập theo tháng
+AdminDashboard.jsx:385: Tỷ lệ hoàn thành
+AdminDashboard.jsx:404: Đã xong
+AdminDashboard.jsx:405: Còn lại
+AdminDashboard.jsx:410: Nhận diện ASL
+AdminDashboard.jsx:425: Chỉ số tổng hợp
+AdminDashboard.jsx:439: So sánh thực hành & kiểm tra
+AdminInstructors.jsx:40: Không thể tải danh sách giảng viên!
+AdminInstructors.jsx:49: Không thể tải hồ sơ!
+AdminInstructors.jsx:63: Vui lòng nhập đầy đủ!
+AdminInstructors.jsx:66: Đã tạo tài khoản giảng viên! Hệ thống đã ghi nhận thông tin đăng nhập.
+AdminInstructors.jsx:68: Thao tác thất bại!
+AdminInstructors.jsx:73: Vui lòng nhập đầy đủ!
+AdminInstructors.jsx:76: Đã cập nhật thông tin giảng viên!
+AdminInstructors.jsx:78: Thao tác thất bại!
+AdminInstructors.jsx:82: Khóa tài khoản giảng viên?
+AdminInstructors.jsx:85: Đã khóa!
+AdminInstructors.jsx:86: Thao tác thất bại!
+AdminInstructors.jsx:90: Mật khẩu phải ít nhất 6 ký tự!
+AdminInstructors.jsx:93: Đã đặt lại mật khẩu!
+AdminInstructors.jsx:94: Thao tác thất bại!
+AdminInstructors.jsx:99: Vui lòng chọn lớp!
+AdminInstructors.jsx:102: Đã gán giảng viên vào lớp!
+AdminInstructors.jsx:104: Thao tác thất bại!
+AdminInstructors.jsx:126: Tổng giảng viên
+AdminInstructors.jsx:136: Thêm giảng viên
+AdminInstructors.jsx:143: Tìm theo tên, email...
+AdminInstructors.jsx:151: giảng viên
+AdminInstructors.jsx:178: ● Hoạt động
+AdminInstructors.jsx:184: Xem hồ sơ
+AdminInstructors.jsx:186: Chỉnh sửa
+AdminInstructors.jsx:188: Khóa
+AdminInstructors.jsx:192: Đặt lại mật khẩu
+AdminInstructors.jsx:205: giảng viên
+AdminInstructors.jsx:221: Họ tên
+AdminInstructors.jsx:222: Nhập email
+AdminInstructors.jsx:223: Mật khẩu khởi tạo
+AdminInstructors.jsx:282: Số lớp
+AdminInstructors.jsx:283: Học viên
+AdminInstructors.jsx:284: Bài tập đã giao
+AdminInstructors.jsx:285: Bài kiểm tra
+AdminInstructors.jsx:342: -- Chọn lớp --
+AdminInstructors.jsx:361: Mật khẩu mới (ít nhất 6 ký tự)
+AdminLayout.jsx:29: Bạn có chắc muốn đăng xuất?
+AdminLayout.jsx:39: Đã chuyển sang Tiếng Việt
+AdminLayout.jsx:46: Quản lý học viên
+AdminLayout.jsx:47: Quản lý giảng viên
+AdminLayout.jsx:48: Quản lý lớp học
+AdminLayout.jsx:49: Ngân hàng câu hỏi
+AdminLayout.jsx:50: Thống kê & Phân tích
+AdminLayout.jsx:51: Báo cáo
+AdminLayout.jsx:52: Quản lý thông báo
+AdminLayout.jsx:53: Nhật ký hệ thống
+AdminLayout.jsx:54: Hệ thống & Bảo mật
+AdminLayout.jsx:55: Phân quyền
+AdminLayout.jsx:56: Hỗ trợ kỹ thuật
+AdminLayout.jsx:57: Huy hiệu & Thành tích
+AdminLayout.jsx:85: Quản trị hệ thống
+AdminLayout.jsx:118: MENU QUẢN TRỊ
+AdminLayout.jsx:181: Xem hồ sơ
+AdminLayout.jsx:208: Quản trị viên
+AdminLayout.jsx:219: Đăng xuất
+AdminLogs.jsx:31: Không thể tải nhật ký!
+AdminLogs.jsx:41: Không thể tải nhật ký hệ thống!
+AdminLogs.jsx:59: Học viên
+AdminLogs.jsx:60: Giảng viên
+AdminLogs.jsx:61: Quản trị viên
+AdminLogs.jsx:65: Đăng nhập
+AdminLogs.jsx:66: Đăng nhập thất bại
+AdminLogs.jsx:67: Đăng xuất
+AdminLogs.jsx:68: Đăng ký
+AdminLogs.jsx:69: Nộp bài
+AdminLogs.jsx:70: Cập nhật hồ sơ
+AdminLogs.jsx:71: Đổi mật khẩu
+AdminLogs.jsx:100: Hành động người dùng
+AdminLogs.jsx:101: Sự kiện hệ thống
+AdminLogs.jsx:111: Làm mới
+AdminLogs.jsx:119: Tab 1: Nhật ký người dùng (Audit Log)
+AdminLogs.jsx:122: Tab 2: Nhật ký hệ thống (System Events)
+AdminLogs.jsx:129: Tất cả vai trò
+AdminLogs.jsx:130: Học viên
+AdminLogs.jsx:131: Giảng viên
+AdminLogs.jsx:138: Tất cả mức độ
+AdminLogs.jsx:151: bản ghi
+AdminLogs.jsx:194: bản ghi
+AdminLogs.jsx:206: sự kiện
+AdminLogs.jsx:243: sự kiện
+AdminNotifications.jsx:35: Không thể tải thông báo!
+AdminNotifications.jsx:51: Tiêu đề và nội dung là bắt buộc!
+AdminNotifications.jsx:55: Đã cập nhật thông báo!
+AdminNotifications.jsx:58: Đã tạo thông báo!
+AdminNotifications.jsx:62: Thao tác thất bại!
+AdminNotifications.jsx:71: Gửi thất bại!
+AdminNotifications.jsx:76: Xóa thông báo này?
+AdminNotifications.jsx:79: Đã xóa thông báo!
+AdminNotifications.jsx:81: Thao tác thất bại!
+AdminNotifications.jsx:84: Toàn hệ thống
+AdminNotifications.jsx:85: Học viên yếu
+AdminNotifications.jsx:114: Tổng thông báo
+AdminNotifications.jsx:129: Tạo thông báo
+AdminNotifications.jsx:142: thông báo
+AdminNotifications.jsx:157: Đã gửi
+AdminNotifications.jsx:163: Đối tượng:
+AdminNotifications.jsx:171: Gửi / Gửi lại
+AdminNotifications.jsx:184: thông báo
+AdminNotifications.jsx:202: Nhập tiêu đề thông báo...
+AdminNotifications.jsx:207: Nhập nội dung thông báo...
+AdminNotifications.jsx:215: Toàn bộ hệ thống (tất cả học viên + giảng viên)
+AdminNotifications.jsx:216: Tất cả học viên
+AdminNotifications.jsx:217: Tất cả giảng viên
+AdminNotifications.jsx:218: Theo lớp
+AdminNotifications.jsx:219: Theo nhóm
+AdminNotifications.jsx:229: -- Chọn lớp --
+AdminNotifications.jsx:243: -- Chọn nhóm --
+AdminNotifications.jsx:244: Học viên yếu (điểm dưới 50)
+AdminNotifications.jsx:245: Học viên mới (7 ngày gần đây)
+AdminNotifications.jsx:253: Cập nhật
+AdminProfile.jsx:52: Không thể tải thông tin tài khoản!
+AdminProfile.jsx:65: Ảnh không được vượt quá 5MB!
+AdminProfile.jsx:98: Họ tên phải có ít nhất 2 ký tự!
+AdminProfile.jsx:114: Cập nhật thông tin thành công!
+AdminProfile.jsx:127: Vui lòng điền đầy đủ thông tin!
+AdminProfile.jsx:131: Mật khẩu mới phải có ít nhất 6 ký tự!
+AdminProfile.jsx:135: Xác nhận mật khẩu không khớp!
+AdminProfile.jsx:144: Đổi mật khẩu thành công!
+AdminProfile.jsx:148: Đổi mật khẩu thất bại!
+AdminProfile.jsx:156: Học viên
+AdminProfile.jsx:179: Làm mới
+AdminProfile.jsx:212: Hoạt động
+AdminProfile.jsx:251: Thông tin cá nhân
+AdminProfile.jsx:256: Đổi mật khẩu
+AdminProfile.jsx:279: Chọn ảnh
+AdminProfile.jsx:283: Xóa ảnh
+AdminProfile.jsx:301: Nhập họ và tên...
+AdminProfile.jsx:341: Đang lưu...
+AdminProfile.jsx:366: Nhập mật khẩu hiện tại...
+AdminProfile.jsx:386: Nhập mật khẩu mới (ít nhất 6 ký tự)...
+AdminProfile.jsx:418: Nhập lại mật khẩu mới...
+AdminProfile.jsx:432: Mật khẩu không khớp
+AdminProfile.jsx:436: Mật khẩu khớp
+AdminProfile.jsx:445: Đang lưu...
+AdminReports.jsx:63: Địa chỉ: TP. Hồ Chí Minh, Việt Nam
+AdminReports.jsx:67: Số:
+AdminReports.jsx:68: Ngày lập:
+AdminReports.jsx:75: BÁO CÁO KẾT QUẢ HỌC TẬP HỌC VIÊN
+AdminReports.jsx:76: BÁO CÁO HOẠT ĐỘNG GIẢNG DẠY
+AdminReports.jsx:77: BÁO CÁO TỔNG HỢP HỆ THỐNG
+AdminReports.jsx:80: Hệ thống thực hành, kiểm tra và đánh giá thủ ngữ ASL
+AdminReports.jsx:81: Thống kê hoạt động giảng dạy của giảng viên
+AdminReports.jsx:82: Thống kê dữ liệu vận hành toàn hệ thống
+AdminReports.jsx:88: Kỳ báo cáo:
+AdminReports.jsx:89: Lớp học:
+AdminReports.jsx:90: Học viên:
+AdminReports.jsx:91: Người lập báo cáo:
+AdminReports.jsx:92: Thời gian xuất:
+AdminReports.jsx:103: Họ và tên
+AdminReports.jsx:105: Điểm TB
+AdminReports.jsx:106: Độ chính xác
+AdminReports.jsx:107: Tổng bài
+AdminReports.jsx:108: Hoàn thành
+AdminReports.jsx:109: Tỷ lệ HT
+AdminReports.jsx:142: Họ và tên giảng viên
+AdminReports.jsx:144: Số lớp phụ trách
+AdminReports.jsx:145: Số học viên
+AdminReports.jsx:146: Bài tập đã giao
+AdminReports.jsx:170: Chỉ số
+AdminReports.jsx:172: Tổng số tài khoản
+AdminReports.jsx:173: Tổng lượt nộp bài
+AdminReports.jsx:174: Tổng lượt nhận diện ASL
+AdminReports.jsx:236: Không thể tải báo cáo!
+AdminReports.jsx:242: Vui lòng tạo báo cáo trước!
+AdminReports.jsx:261: Vui lòng tạo báo cáo trước!
+AdminReports.jsx:269: HỆ THỐNG ĐÀO TẠO NGÔN NGỮ KÝ HIỆU ASL
+AdminReports.jsx:270: BÁO CÁO KẾT QUẢ HỌC TẬP HỌC VIÊN
+AdminReports.jsx:272: Số báo cáo:
+AdminReports.jsx:273: Ngày lập:
+AdminReports.jsx:274: Kỳ báo cáo:
+AdminReports.jsx:275: Lớp học:
+AdminReports.jsx:276: Học viên:
+AdminReports.jsx:277: Tổng số học viên:
+AdminReports.jsx:279: Họ và tên
+AdminReports.jsx:297: Kết quả học tập
+AdminReports.jsx:301: HỆ THỐNG ĐÀO TẠO NGÔN NGỮ KÝ HIỆU ASL
+AdminReports.jsx:302: BÁO CÁO HOẠT ĐỘNG GIẢNG DẠY
+AdminReports.jsx:304: Số báo cáo:
+AdminReports.jsx:305: Ngày lập:
+AdminReports.jsx:306: Tổng giảng viên:
+AdminReports.jsx:308: Họ và tên giảng viên
+AdminReports.jsx:315: Hoạt động giảng dạy
+AdminReports.jsx:319: HỆ THỐNG ĐÀO TẠO NGÔN NGỮ KÝ HIỆU ASL
+AdminReports.jsx:320: BÁO CÁO TỔNG HỢP HỆ THỐNG
+AdminReports.jsx:322: Số báo cáo:
+AdminReports.jsx:323: Ngày lập:
+AdminReports.jsx:325: Chỉ số
+AdminReports.jsx:326: Tổng số tài khoản
+AdminReports.jsx:327: Tổng lượt nộp bài
+AdminReports.jsx:328: Tổng lượt nhận diện ASL
+AdminReports.jsx:332: Tổng hợp hệ thống
+AdminReports.jsx:336: Đã xuất file Excel (.xlsx)!
+AdminReports.jsx:340: Báo cáo học viên
+AdminReports.jsx:341: Báo cáo giảng viên
+AdminReports.jsx:342: Báo cáo hệ thống
+AdminReports.jsx:366: Báo cáo học viên
+AdminReports.jsx:367: Báo cáo giảng viên
+AdminReports.jsx:368: Báo cáo hệ thống
+AdminReports.jsx:379: Xuất PDF
+AdminReports.jsx:382: Xuất Excel
+AdminReports.jsx:412: Tất cả lớp
+AdminReports.jsx:420: Tất cả học viên
+AdminReports.jsx:439: Đang tải...
+AdminReports.jsx:454: BÁO CÁO KẾT QUẢ HỌC TẬP
+AdminReports.jsx:455: BÁO CÁO HOẠT ĐỘNG GIẢNG DẠY
+AdminReports.jsx:456: BÁO CÁO TỔNG HỢP HỆ THỐNG
+AdminReports.jsx:466: Kỳ báo cáo:
+AdminReports.jsx:467: Lớp:
+AdminReports.jsx:468: Học viên:
+AdminReports.jsx:469: Tổng bản ghi:
+AdminReports.jsx:551: Tổng số tài khoản
+AdminReports.jsx:552: Tổng lượt nộp bài
+AdminReports.jsx:553: Tổng lượt nhận diện ASL
+AdminRoles.jsx:18: Quản lý học viên
+AdminRoles.jsx:19: Xem học viên
+AdminRoles.jsx:20: Tạo bài tập
+AdminRoles.jsx:21: Xem bài tập
+AdminRoles.jsx:22: Chấm bài
+AdminRoles.jsx:23: Tạo bài kiểm tra
+AdminRoles.jsx:24: Xem báo cáo
+AdminRoles.jsx:25: Xuất báo cáo
+AdminRoles.jsx:26: Gửi thông báo
+AdminRoles.jsx:27: Quản lý người dùng
+AdminRoles.jsx:28: Quản lý hệ thống
+AdminRoles.jsx:32: Học viên
+AdminRoles.jsx:33: Giảng viên
+AdminRoles.jsx:34: Quản trị viên
+AdminRoles.jsx:80: Thao tác thất bại!
+AdminRoles.jsx:90: Lưu thất bại!
+AdminRoles.jsx:95: Reset quyền về mặc định của vai trò?
+AdminRoles.jsx:103: Reset thất bại!
+AdminRoles.jsx:155: Admin có toàn bộ quyền — không thể thay đổi
+AdminRoles.jsx:175: Có thay đổi chưa lưu
+AdminRoles.jsx:197: Reset mặc định
+AdminRoles.jsx:202: Đang lưu...
+AdminRoles.jsx:249: Không thể tải dữ liệu phân quyền!
+AdminRoles.jsx:262: Không thể tải danh sách người dùng!
+AdminRoles.jsx:278: Không thể vô hiệu hóa vai trò Admin!
+AdminRoles.jsx:280: vô hiệu hóa
+AdminRoles.jsx:290: Không thể thay đổi quyền của Admin!
+AdminRoles.jsx:328: Quản lý vai trò & quyền
+AdminRoles.jsx:329: Gán & kiểm tra quyền
+AdminRoles.jsx:361: Đang hoạt động
+AdminRoles.jsx:386: Admin được phép toàn bộ quyền trong hệ thống
+AdminRoles.jsx:390: Vai trò này đang bị vô hiệu hóa
+AdminRoles.jsx:415: Tìm tên hoặc email...
+AdminRoles.jsx:425: Tất cả vai trò
+AdminRoles.jsx:426: Học viên
+AdminRoles.jsx:427: Giảng viên
+AdminRoles.jsx:428: Quản trị viên
+AdminRoles.jsx:433: Tìm
+AdminRoles.jsx:443: người dùng
+AdminRoles.jsx:449: Người dùng
+AdminRoles.jsx:451: Vai trò
+AdminRoles.jsx:452: Quyền hạn
+AdminRoles.jsx:497: Toàn quyền
+AdminRoles.jsx:510: Sửa quyền
+AdminRoles.jsx:518: người dùng
+AdminStatistics.jsx:40: Không thể tải dữ liệu thống kê!
+AdminStatistics.jsx:47: Học viên
+AdminStatistics.jsx:48: Giảng viên
+AdminStatistics.jsx:49: Nội dung
+AdminStatistics.jsx:71: Học viên
+AdminStatistics.jsx:72: Giảng viên
+AdminStatistics.jsx:73: Lượt học
+AdminStatistics.jsx:111: Tổng học viên
+AdminStatistics.jsx:112: Đang hoạt động
+AdminStatistics.jsx:113: Không hoạt động
+AdminStatistics.jsx:114: Tỷ lệ hoàn thành
+AdminStatistics.jsx:115: Điểm TB hệ thống
+AdminStatistics.jsx:135: Đăng ký mới
+AdminStatistics.jsx:155: Lượt nộp bài
+AdminStatistics.jsx:175: Tiến bộ nhất
+AdminStatistics.jsx:176: Yếu nhất
+AdminStatistics.jsx:177: Tích cực nhất
+AdminStudents.jsx:14: ● Hoạt động
+AdminStudents.jsx:64: Không thể tải danh sách học viên!
+AdminStudents.jsx:76: Không thể tải hồ sơ học viên!
+AdminStudents.jsx:84: Khóa tài khoản này?
+AdminStudents.jsx:87: Đã khóa tài khoản!
+AdminStudents.jsx:90: Thao tác thất bại!
+AdminStudents.jsx:95: Mật khẩu phải ít nhất 6 ký tự!
+AdminStudents.jsx:98: Đã đặt lại mật khẩu!
+AdminStudents.jsx:101: Thao tác thất bại!
+AdminStudents.jsx:106: Xóa vĩnh viễn tài khoản này? Hành động không thể hoàn tác!
+AdminStudents.jsx:109: Đã xóa tài khoản!
+AdminStudents.jsx:112: Thao tác thất bại!
+AdminStudents.jsx:129: Sync thất bại, vui lòng thử lại!
+AdminStudents.jsx:156: Tổng học viên
+AdminStudents.jsx:166: Làm mới
+AdminStudents.jsx:169: Đang sync...
+AdminStudents.jsx:180: Xóa bộ lọc
+AdminStudents.jsx:189: Tìm theo tên, email, mã học viên...
+AdminStudents.jsx:195: Tất cả lớp học
+AdminStudents.jsx:201: Tất cả trạng thái
+AdminStudents.jsx:202: Đang hoạt động
+AdminStudents.jsx:203: Bị khóa
+AdminStudents.jsx:206: Từ ngày
+AdminStudents.jsx:209: Đến ngày
+AdminStudents.jsx:220: học viên
+AdminStudents.jsx:263: Xem hồ sơ
+AdminStudents.jsx:265: Khóa
+AdminStudents.jsx:269: Đặt lại mật khẩu
+AdminStudents.jsx:271: Xóa tài khoản
+AdminStudents.jsx:282: học viên
+AdminStudents.jsx:310: Tổng bài đã làm
+AdminStudents.jsx:311: Bài hoàn thành
+AdminStudents.jsx:312: Điểm trung bình
+AdminStudents.jsx:313: Tỷ lệ chính xác
+AdminStudents.jsx:314: Thời gian thực hành
+AdminStudents.jsx:315: Ngày tạo TK
+AdminStudents.jsx:332: Bài thực hành
+AdminStudents.jsx:379: Mật khẩu mới (ít nhất 6 ký tự)
+AdminSupport.jsx:16: Mới tạo
+AdminSupport.jsx:17: Đang xử lý
+AdminSupport.jsx:18: Đã hoàn thành
+AdminSupport.jsx:19: Đã đóng
+AdminSupport.jsx:23: Đăng nhập
+AdminSupport.jsx:24: Nhận diện ASL
+AdminSupport.jsx:28: Đăng nhập
+AdminSupport.jsx:30: Bài kiểm tra
+AdminSupport.jsx:31: Nhận diện ASL
+AdminSupport.jsx:32: Khác
+AdminSupport.jsx:66: Không thể tải danh sách ticket!
+AdminSupport.jsx:77: Không thể tải chi tiết ticket!
+AdminSupport.jsx:111: Tiêu đề và nội dung không được để trống!
+AdminSupport.jsx:124: Đã lưu thay đổi!
+AdminSupport.jsx:126: Lưu thất bại!
+AdminSupport.jsx:137: Đã cập nhật trạng thái!
+AdminSupport.jsx:142: Thao tác thất bại!
+AdminSupport.jsx:148: Vui lòng nhập nội dung!
+AdminSupport.jsx:159: Gửi thất bại!
+AdminSupport.jsx:167: Bạn có chắc muốn xóa ticket này không? Hành động này không thể hoàn tác.
+AdminSupport.jsx:170: Đã xóa ticket!
+AdminSupport.jsx:174: Xóa thất bại!
+AdminSupport.jsx:210: Tổng ticket
+AdminSupport.jsx:211: Đang xử lý
+AdminSupport.jsx:212: Mới tạo
+AdminSupport.jsx:222: Làm mới
+AdminSupport.jsx:230: Tất cả trạng thái
+AdminSupport.jsx:231: Mới tạo
+AdminSupport.jsx:232: Đang xử lý
+AdminSupport.jsx:233: Đã hoàn thành
+AdminSupport.jsx:234: Đã đóng
+AdminSupport.jsx:238: Tất cả loại lỗi
+AdminSupport.jsx:293: Chỉnh sửa
+AdminSupport.jsx:295: Sửa
+AdminSupport.jsx:297: Xóa ticket
+AdminSupport.jsx:299: Xóa
+AdminSupport.jsx:379: Chỉnh sửa nội dung
+AdminSupport.jsx:384: Xóa ticket
+AdminSupport.jsx:438: Khác
+AdminSupport.jsx:473: Đang lưu...
+AdminSupport.jsx:508: Người dùng
+AdminSupport.jsx:532: Nhập tin nhắn trả lời...
+AdminSystem.jsx:49: Buộc đăng xuất tài khoản này?
+AdminSystem.jsx:52: Đã buộc đăng xuất!
+AdminSystem.jsx:54: Thao tác thất bại!
+AdminSystem.jsx:59: Kết thúc toàn bộ phiên đăng nhập của tất cả người dùng? Hành động này sẽ đăng xu
+AdminSystem.jsx:62: Đã kết thúc toàn bộ phiên!
+AdminSystem.jsx:64: Thao tác thất bại!
+AdminSystem.jsx:74: Backup thất bại!
+AdminSystem.jsx:83: Đã khôi phục dữ liệu!
+AdminSystem.jsx:84: Khôi phục thất bại!
+AdminSystem.jsx:91: Đã cập nhật chính sách bảo mật!
+AdminSystem.jsx:92: Cập nhật thất bại!
+AdminSystem.jsx:96: Phiên đăng nhập
+AdminSystem.jsx:97: Sao lưu & Khôi phục
+AdminSystem.jsx:98: Chính sách bảo mật
+AdminSystem.jsx:120: Phiên đăng nhập
+AdminSystem.jsx:131: Làm mới
+AdminSystem.jsx:154: Làm mới
+AdminSystem.jsx:158: Kết thúc toàn bộ phiên
+AdminSystem.jsx:183: Giảng viên
+AdminSystem.jsx:195: Buộc đăng xuất
+AdminSystem.jsx:214: Đang backup...
+AdminSystem.jsx:230: Thành công
+AdminSystem.jsx:235: Khôi phục
+AdminSystem.jsx:275: Mỗi ngày
+AdminSystem.jsx:276: Mỗi tuần
+AdminSystem.jsx:277: Mỗi tháng
+AdminSystem.jsx:278: Tắt
+AdminSystem.jsx:284: Lưu chính sách
+PaginationBar.jsx:15: mục
+PaginationBar.jsx:53: Trang đầu
+PaginationBar.jsx:65: Trang trước
+PaginationBar.jsx:71: Trước
+PaginationBar.jsx:133: Trang cuối

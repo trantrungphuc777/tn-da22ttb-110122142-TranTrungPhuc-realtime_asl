@@ -1,0 +1,2357 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+/* ===== GLOBAL STYLES ===== */
+* {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #eef6ff 0%, #e0f0ff 30%, #f0f7ff 60%, #e8f4ff 100%);
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #e0eeff; border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #60a5fa, #3b82f6); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #3b82f6, #2563eb); }
+
+.feedback-scroll::-webkit-scrollbar { width: 6px; }
+.feedback-scroll::-webkit-scrollbar-track { background: #dbeafe; border-radius: 3px; }
+.feedback-scroll::-webkit-scrollbar-thumb { background: #93c5fd; border-radius: 3px; }
+.feedback-scroll::-webkit-scrollbar-thumb:hover { background: #60a5fa; }
+
+/* ===== EXISTING ANIMATIONS (preserved) ===== */
+@keyframes confetti-fall {
+  0% { transform: translateY(-100%) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(400px) rotate(720deg); opacity: 0; }
+}
+.animate-confetti { animation: confetti-fall 3s ease-in-out forwards; }
+
+@keyframes confetti-rain {
+  0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(1080deg); opacity: 0; }
+}
+.animate-confetti-rain { animation: confetti-rain 4s linear infinite; }
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); }
+}
+.animate-twinkle { animation: twinkle 2s ease-in-out infinite; }
+
+@keyframes firework {
+  0% { transform: scale(0); opacity: 1; }
+  50% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+.animate-firework { animation: firework 1.5s ease-out forwards; }
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+.animate-shimmer { animation: shimmer 2s ease-in-out infinite; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; max-height: 0; transform: translateY(-10px); }
+  to { opacity: 1; max-height: 500px; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-fadeIn { animation: fadeIn 0.3s ease-out; }
+.animate-slideDown { animation: slideDown 0.3s ease-out; }
+.animate-slideUp { animation: slideUp 0.3s ease-out; }
+.animate-scaleIn { animation: scaleIn 0.2s ease-out; }
+.animate-pulse-custom { animation: pulse 2s ease-in-out infinite; }
+
+/* ===== MODERN AI/ML EFFECTS ===== */
+@keyframes gradient-xy {
+  0%, 100% { opacity: 0.85; }
+  50%       { opacity: 1; }
+}
+.animate-gradient-xy {
+  animation: gradient-xy 3s ease infinite;
+}
+
+@keyframes float {
+  0%   { transform: translateY(0px);   opacity: 0.7; }
+  50%  { transform: translateY(-30px); opacity: 1;   }
+  100% { transform: translateY(0px);   opacity: 0.7; }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+
+@keyframes float-slow {
+  0%   { transform: translateY(0px);   opacity: 0.6; }
+  50%  { transform: translateY(-40px); opacity: 0.9; }
+  100% { transform: translateY(0px);   opacity: 0.6; }
+}
+.animate-float-slow { animation: float-slow 10s ease-in-out infinite; }
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.5); }
+  70% { box-shadow: 0 0 0 18px rgba(59, 130, 246, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+}
+.animate-pulse-ring { animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite; }
+
+/* Badge card dynamic pulse ring (uses CSS var --ring-color) */
+@keyframes pulse-ring-dynamic {
+  0%   { box-shadow: 0 0 0 0 var(--ring-color, rgba(59,130,246,0.5)); }
+  70%  { box-shadow: 0 0 0 14px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+.animate-pulse-ring[style*='--ring-color'] {
+  animation: pulse-ring-dynamic 2.2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+/* Badge card stagger slide-up */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes slide-up-fade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-up { animation: slide-up-fade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+/* ===== GLASSMORPHISM 2.0 ===== */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(147, 197, 253, 0.4);
+  box-shadow:
+    0 8px 32px -8px rgba(59, 130, 246, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.dark-glass-panel {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  box-shadow:
+    0 8px 32px 0 rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(96, 165, 250, 0.1);
+}
+
+/* ===== NEON TEXT GRADIENT ===== */
+.text-gradient-neon {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(135deg, #60a5fa, #38bdf8, #06b6d4, #60a5fa);
+  background-size: 300% auto;
+  animation: gradient-xy 4s linear infinite;
+}
+
+/* ===== CARD HOVER 3D ===== */
+.card-hover-effect {
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+.card-hover-effect:hover {
+  transform: translateY(-10px) rotateX(2deg) rotateY(-1deg) scale(1.02);
+  box-shadow:
+    0 25px 50px -12px rgba(59, 130, 246, 0.25),
+    0 0 0 1px rgba(96, 165, 250, 0.3);
+}
+
+/* ===== NEW 2026 EFFECTS ===== */
+
+/* 1. Aurora Glow Background — gentle opacity pulse only */
+@keyframes aurora {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 0.85; }
+}
+.aurora-bg {
+  background: linear-gradient(135deg,
+    rgba(59,130,246,0.12) 0%,
+    rgba(14,165,233,0.08) 25%,
+    rgba(56,189,248,0.12) 50%,
+    rgba(96,165,250,0.08) 75%,
+    rgba(59,130,246,0.12) 100%
+  );
+  animation: aurora 8s ease-in-out infinite;
+}
+
+/* 2. Neural Pulse */
+@keyframes neural-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 60px rgba(59, 130, 246, 0.1);
+    border-color: rgba(96, 165, 250, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5), 0 0 80px rgba(59, 130, 246, 0.2);
+    border-color: rgba(96, 165, 250, 0.7);
+  }
+}
+.neural-pulse {
+  animation: neural-pulse 3s ease-in-out infinite;
+}
+
+/* 3. Scan Line Effect (for camera/AI areas) */
+@keyframes scan-line {
+  0% { top: -2px; opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { top: 100%; opacity: 0; }
+}
+.scan-effect::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #3b82f6, #60a5fa, #3b82f6, transparent);
+  box-shadow: 0 0 15px #3b82f6, 0 0 30px rgba(59, 130, 246, 0.5);
+  animation: scan-line 2.5s ease-in-out infinite;
+  z-index: 10;
+  border-radius: 2px;
+}
+
+/* 4. Holographic Border */
+@keyframes holo-border {
+  0% { border-color: rgba(59, 130, 246, 0.5); box-shadow: 0 0 15px rgba(59, 130, 246, 0.2); }
+  33% { border-color: rgba(14, 165, 233, 0.5); box-shadow: 0 0 15px rgba(14, 165, 233, 0.2); }
+  66% { border-color: rgba(56, 189, 248, 0.5); box-shadow: 0 0 15px rgba(56, 189, 248, 0.2); }
+  100% { border-color: rgba(59, 130, 246, 0.5); box-shadow: 0 0 15px rgba(59, 130, 246, 0.2); }
+}
+.holo-border {
+  border: 2px solid rgba(59, 130, 246, 0.4);
+  animation: holo-border 4s ease-in-out infinite;
+}
+
+/* 5. 3D Tilt Card */
+.tilt-3d {
+  transform-style: preserve-3d;
+  perspective: 800px;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.tilt-3d:hover {
+  transform: perspective(800px) rotateX(4deg) rotateY(-4deg) translateZ(20px);
+}
+
+/* 6. Neon Button Glow */
+.neon-btn {
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 0 20px rgba(59, 130, 246, 0.4),
+    0 0 40px rgba(59, 130, 246, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+.neon-btn:hover {
+  box-shadow:
+    0 0 30px rgba(59, 130, 246, 0.6),
+    0 0 60px rgba(59, 130, 246, 0.2),
+    0 0 100px rgba(59, 130, 246, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+.neon-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.6s ease;
+}
+.neon-btn:hover::before {
+  left: 100%;
+}
+
+/* 7. Particle Grid Background */
+.particle-grid {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.08) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+
+/* 8. Soft Aurora Wash — static, no movement */
+.data-stream {
+  background-image:
+    radial-gradient(ellipse 80% 60% at 20% 30%, rgba(99, 179, 246, 0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 80% at 80% 70%, rgba(56, 189, 248, 0.06) 0%, transparent 70%);
+}
+
+/* 9. Glow Progress Bar */
+.glow-progress {
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.2);
+  background: linear-gradient(90deg, #3b82f6, #60a5fa, #38bdf8);
+  background-size: 200% 100%;
+  animation: gradient-xy 2s ease infinite;
+}
+
+/* 10. Morphing Blob — gentle scale pulse, no shape distortion */
+@keyframes morph {
+  0%, 100% { transform: scale(1);    opacity: 0.8; }
+  50%       { transform: scale(1.08); opacity: 1;   }
+}
+.morph-blob {
+  border-radius: 50%;
+  animation: morph 8s ease-in-out infinite;
+}
+
+/* 11. Spotlight Effect */
+@keyframes spotlight {
+  0% { transform: translateX(-100%) rotate(25deg); }
+  100% { transform: translateX(200%) rotate(25deg); }
+}
+.spotlight::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  transform: rotate(25deg);
+  animation: spotlight 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* 12. Pulse Glow (for status indicators) */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+
+/* 13. 3D Flip Card */
+@keyframes flip-in {
+  from { transform: perspective(600px) rotateY(90deg); opacity: 0; }
+  to { transform: perspective(600px) rotateY(0deg); opacity: 1; }
+}
+.animate-flip-in { animation: flip-in 0.6s ease-out; }
+
+/* 14. Wave Background */
+@keyframes wave-move {
+  0% { transform: translateX(0) translateZ(0) scaleY(1); }
+  50% { transform: translateX(-25%) translateZ(0) scaleY(0.8); }
+  100% { transform: translateX(-50%) translateZ(0) scaleY(1); }
+}
+
+/* 15. Electric Border */
+@keyframes electric {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(59,130,246,0.5), 0 0 10px rgba(59,130,246,0.3), 0 0 15px rgba(59,130,246,0.1);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(59,130,246,0.8), 0 0 20px rgba(59,130,246,0.5), 0 0 30px rgba(59,130,246,0.3);
+  }
+}
+.electric-border { animation: electric 2s ease-in-out infinite; }
+
+/* 16. Text Shimmer */
+@keyframes text-shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.text-shimmer {
+  background: linear-gradient(90deg, #1e40af, #3b82f6, #60a5fa, #93c5fd, #60a5fa, #3b82f6, #1e40af);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-shimmer 4s linear infinite;
+}
+
+/* 17. Floating Particles — rise from bottom and fade out, loop */
+@keyframes particle-float {
+  0%   { transform: translateY(0px);    opacity: 0;   }
+  10%  { opacity: 0.7; }
+  90%  { opacity: 0.4; }
+  100% { transform: translateY(-120px); opacity: 0;   }
+}
+.animate-particle { animation: particle-float 5s ease-in infinite; }
+
+/* 18. Depth Shadow (3D depth) */
+.depth-shadow {
+  box-shadow:
+    0 1px 2px rgba(59, 130, 246, 0.05),
+    0 4px 8px rgba(59, 130, 246, 0.08),
+    0 8px 16px rgba(59, 130, 246, 0.08),
+    0 16px 32px rgba(59, 130, 246, 0.06);
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+.depth-shadow:hover {
+  box-shadow:
+    0 2px 4px rgba(59, 130, 246, 0.08),
+    0 8px 16px rgba(59, 130, 246, 0.12),
+    0 16px 32px rgba(59, 130, 246, 0.12),
+    0 32px 64px rgba(59, 130, 246, 0.08);
+  transform: translateY(-4px);
+}
+
+/* 19. Rotate 3D on scroll */
+@keyframes rotate-3d-subtle {
+  0% { transform: perspective(1000px) rotateX(0deg) rotateY(0deg); }
+  25% { transform: perspective(1000px) rotateX(1deg) rotateY(-1deg); }
+  50% { transform: perspective(1000px) rotateX(0deg) rotateY(0deg); }
+  75% { transform: perspective(1000px) rotateX(-1deg) rotateY(1deg); }
+  100% { transform: perspective(1000px) rotateX(0deg) rotateY(0deg); }
+}
+.animate-3d-subtle { animation: rotate-3d-subtle 8s ease-in-out infinite; }
+
+/* ── Hex/Particle grid scroll upward ── */
+@keyframes grid-rise {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+.grid-rise {
+  animation: grid-rise 8s linear infinite;
+  will-change: transform;
+}
+
+/* 20. Hexagon Grid Pattern */
+.hex-grid {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5L55 20V40L30 55L5 40V20L30 5Z' fill='none' stroke='rgba(59,130,246,0.18)' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+}
+
+/* 21. Ripple Click Effect */
+@keyframes ripple {
+  0% { transform: scale(0); opacity: 0.5; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+/* 22. Smooth Page Transition */
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(20px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.page-enter { animation: page-enter 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+
+/* 23. Breathing Glow */
+@keyframes breathe {
+  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.4), 0 0 80px rgba(59, 130, 246, 0.1); }
+}
+.breathe-glow { animation: breathe 4s ease-in-out infinite; }
+
+/* ===== BLUE GLASS CARD ===== */
+.blue-glass {
+  background: rgba(239, 246, 255, 0.7);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(147, 197, 253, 0.3);
+  box-shadow:
+    0 4px 24px -4px rgba(59, 130, 246, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* ===== UTILITY: Hide scrollbar but keep scrolling ===== */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ===== SMOOTH SCROLLING ===== */
+html { scroll-behavior: smooth; }
+
+/* ══════════════════════════════════════════════════════════════════
+   BADGE PAGE — PREMIUM 2025/2026 EFFECTS
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ── Holographic shimmer sweep (legendary cards) ── */
+@keyframes holo-sweep {
+  0%   { background-position: -200% center; opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { background-position: 200% center; opacity: 0; }
+}
+.holo-shimmer {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    105deg,
+    transparent 20%,
+    rgba(255,255,255,0.08) 30%,
+    rgba(255,215,0,0.18) 40%,
+    rgba(255,255,255,0.22) 50%,
+    rgba(255,100,200,0.12) 60%,
+    rgba(100,200,255,0.12) 70%,
+    transparent 80%
+  );
+  background-size: 200% 100%;
+  animation: holo-sweep 3.5s ease-in-out infinite;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* ── Rainbow border rotate (legendary) ── */
+@keyframes rainbow-border {
+  0%   { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+.rainbow-border-anim {
+  animation: rainbow-border 4s linear infinite;
+}
+
+/* ── Legendary card outer glow pulse ── */
+@keyframes legendary-glow {
+  0%, 100% {
+    box-shadow:
+      0 0 20px rgba(251,191,36,0.5),
+      0 0 40px rgba(251,191,36,0.25),
+      0 0 80px rgba(251,191,36,0.1),
+      inset 0 1px 0 rgba(255,255,255,0.3);
+  }
+  50% {
+    box-shadow:
+      0 0 30px rgba(251,191,36,0.8),
+      0 0 60px rgba(251,191,36,0.4),
+      0 0 120px rgba(251,191,36,0.2),
+      inset 0 1px 0 rgba(255,255,255,0.4);
+  }
+}
+.legendary-glow { animation: legendary-glow 2.5s ease-in-out infinite; }
+
+/* ── Epic card glow pulse ── */
+@keyframes epic-glow {
+  0%, 100% {
+    box-shadow:
+      0 0 16px rgba(168,85,247,0.5),
+      0 0 32px rgba(168,85,247,0.2),
+      inset 0 1px 0 rgba(255,255,255,0.2);
+  }
+  50% {
+    box-shadow:
+      0 0 24px rgba(168,85,247,0.8),
+      0 0 48px rgba(168,85,247,0.4),
+      0 0 80px rgba(168,85,247,0.15),
+      inset 0 1px 0 rgba(255,255,255,0.3);
+  }
+}
+.epic-glow { animation: epic-glow 2.8s ease-in-out infinite; }
+
+/* ── Badge unlock burst ── */
+@keyframes unlock-burst {
+  0%   { transform: scale(0.5) rotate(-10deg); opacity: 0; filter: brightness(2); }
+  40%  { transform: scale(1.15) rotate(3deg);  opacity: 1; filter: brightness(1.5); }
+  70%  { transform: scale(0.95) rotate(-1deg); opacity: 1; filter: brightness(1); }
+  100% { transform: scale(1)    rotate(0deg);  opacity: 1; filter: brightness(1); }
+}
+.badge-unlock { animation: unlock-burst 0.7s cubic-bezier(0.34,1.56,0.64,1) both; }
+
+/* ── Stagger slide-up for grid items ── */
+@keyframes badge-enter {
+  from { opacity: 0; transform: translateY(32px) scale(0.92) rotateX(8deg); }
+  to   { opacity: 1; transform: translateY(0)    scale(1)    rotateX(0deg); }
+}
+.badge-enter {
+  animation: badge-enter 0.55s cubic-bezier(0.16,1,0.3,1) both;
+  transform-origin: bottom center;
+}
+
+/* ── Earned badge icon bounce ── */
+@keyframes icon-bounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  30%       { transform: translateY(-6px) scale(1.08); }
+  60%       { transform: translateY(-2px) scale(1.03); }
+}
+.icon-bounce { animation: icon-bounce 3s ease-in-out infinite; }
+
+/* ── Sparkle twinkle (stars around earned badge) ── */
+@keyframes sparkle-pop {
+  0%   { transform: scale(0) rotate(0deg);   opacity: 0; }
+  50%  { transform: scale(1.3) rotate(180deg); opacity: 1; }
+  100% { transform: scale(0) rotate(360deg); opacity: 0; }
+}
+.sparkle-1 { animation: sparkle-pop 2.4s ease-in-out 0.0s infinite; }
+.sparkle-2 { animation: sparkle-pop 2.4s ease-in-out 0.4s infinite; }
+.sparkle-3 { animation: sparkle-pop 2.4s ease-in-out 0.8s infinite; }
+.sparkle-4 { animation: sparkle-pop 2.4s ease-in-out 1.2s infinite; }
+
+/* ── Hero banner aurora mesh — opacity pulse only ── */
+@keyframes hero-aurora {
+  0%, 100% { opacity: 0.7; }
+  50%       { opacity: 1;   }
+}
+.hero-aurora {
+  background: linear-gradient(
+    135deg,
+    rgba(99,102,241,0.3) 0%,
+    rgba(139,92,246,0.2) 20%,
+    rgba(236,72,153,0.2) 40%,
+    rgba(251,191,36,0.15) 60%,
+    rgba(59,130,246,0.25) 80%,
+    rgba(99,102,241,0.3) 100%
+  );
+  animation: hero-aurora 10s ease-in-out infinite;
+}
+
+/* ── Progress bar animated fill ── */
+@keyframes progress-fill {
+  from { width: 0%; }
+}
+.progress-animated { animation: progress-fill 1.8s cubic-bezier(0.16,1,0.3,1) both; }
+
+/* ── Glow progress bar (badge page variant) ── */
+@keyframes glow-shift {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+.badge-progress-bar {
+  background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899, #f59e0b, #6366f1);
+  background-size: 300% 100%;
+  animation: glow-shift 3s linear infinite;
+  box-shadow: 0 0 8px rgba(139,92,246,0.6), 0 0 16px rgba(139,92,246,0.3);
+}
+
+/* ── Modal entrance ── */
+@keyframes modal-enter {
+  from { opacity: 0; transform: scale(0.85) translateY(20px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0); }
+}
+.modal-enter { animation: modal-enter 0.4s cubic-bezier(0.34,1.56,0.64,1) both; }
+
+/* ── Confetti enhanced ── */
+@keyframes confetti-3d {
+  0%   { transform: translateY(-20px) rotateX(0deg) rotateZ(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotateX(720deg) rotateZ(1080deg); opacity: 0; }
+}
+.confetti-3d { animation: confetti-3d 2.8s cubic-bezier(0.25,0.46,0.45,0.94) forwards; }
+
+/* ── Stat card count-up glow ── */
+@keyframes stat-pop {
+  0%   { transform: scale(0.8); opacity: 0; }
+  60%  { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1);   opacity: 1; }
+}
+.stat-pop { animation: stat-pop 0.6s cubic-bezier(0.34,1.56,0.64,1) both; }
+
+/* ── Rarity card hover lift ── */
+.rarity-card {
+  transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease;
+}
+.rarity-card:hover {
+  transform: translateY(-6px) scale(1.04);
+}
+
+/* ── Filter pill active indicator ── */
+.filter-active-dot::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* ── Tooltip fade ── */
+@keyframes tooltip-in {
+  from { opacity: 0; transform: translateY(4px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0)   scale(1); }
+}
+.tooltip-enter { animation: tooltip-in 0.2s ease-out both; }
+
+/* ── Earned badge card shimmer sweep ── */
+@keyframes card-shimmer {
+  0%   { transform: translateX(-100%) skewX(-15deg); }
+  100% { transform: translateX(200%)  skewX(-15deg); }
+}
+.card-shimmer-effect::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,0.25) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%) skewX(-15deg);
+  animation: card-shimmer 3s ease-in-out infinite;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* ── Floating orb background — rise up gently ── */
+@keyframes orb-drift {
+  0%   { transform: translateY(0px);   opacity: 0.15; }
+  50%  { transform: translateY(-35px); opacity: 0.25; }
+  100% { transform: translateY(0px);   opacity: 0.15; }
+}
+.orb-1 { animation: orb-drift 12s ease-in-out infinite; }
+.orb-2 { animation: orb-drift 16s ease-in-out 2s infinite; }
+.orb-3 { animation: orb-drift 20s ease-in-out 5s infinite; }
+
+/* ── Tilt card 3D (mouse-driven, JS sets CSS vars) ── */
+.badge-card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.3s cubic-bezier(0.23,1,0.32,1), box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+/* ── Unlock ring burst ── */
+@keyframes ring-burst {
+  0%   { transform: scale(1);   opacity: 0.8; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+.ring-burst {
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  border: 2px solid currentColor;
+  animation: ring-burst 0.8s ease-out forwards;
+  pointer-events: none;
+}
+
+/* ── Gradient text (badge name on earned) ── */
+.badge-name-gradient {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.badge-name-gradient-earned {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ── Scroll reveal (intersection observer driven) ── */
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(24px) scale(0.96);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ── Noise texture overlay (premium feel) ── */
+.noise-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* ── Motivational footer pulse ── */
+@keyframes footer-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(99,102,241,0.2); }
+  50%       { box-shadow: 0 0 0 12px rgba(99,102,241,0); }
+}
+.footer-pulse { animation: footer-pulse 3s ease-in-out infinite; }
+
+/* ── Badge count badge (top-right of rarity card) ── */
+.count-badge {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  box-shadow: 0 2px 8px rgba(99,102,241,0.4);
+}
+
+/* ── Skeleton loading shimmer ── */
+@keyframes skeleton-wave {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: skeleton-wave 1.5s ease-in-out infinite;
+  border-radius: 12px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════════
+   PREMIUM 2026 EFFECTS - SPLINE + GSAP STYLE
+   Mouse-following, 3D transforms, Parallax, Scroll-trigger animations
+   ═══════════════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   1. MOUSE-FOLLOWING 3D EFFECTS
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* 3D Tilt container - applies perspective for child transforms */
+.mouse-tilt-container {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Mouse-tracking 3D tilt effect */
+.mouse-tilt-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+.mouse-tilt-3d:hover {
+  transform: translateZ(20px);
+}
+
+/* 3D Card with depth shadow */
+.card-3d-depth {
+  transform-style: preserve-3d;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform, box-shadow;
+}
+.card-3d-depth:hover {
+  transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
+  box-shadow: 
+    0 25px 50px -12px rgba(59, 130, 246, 0.25),
+    0 0 0 1px rgba(96, 165, 250, 0.2);
+}
+
+/* Glow following cursor */
+.glow-follow {
+  position: relative;
+  overflow: hidden;
+}
+.glow-follow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+.glow-follow:hover::before {
+  opacity: 1;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   2. PARALLAX LAYERS
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Parallax layer base */
+.parallax-layer {
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+/* Slower parallax (background) */
+.parallax-slow {
+  transform: translateY(calc(var(--scroll-y, 0) * 0.1px));
+}
+
+/* Medium parallax */
+.parallax-medium {
+  transform: translateY(calc(var(--scroll-y, 0) * 0.2px));
+}
+
+/* Faster parallax (foreground) */
+.parallax-fast {
+  transform: translateY(calc(var(--scroll-y, 0) * 0.3px));
+}
+
+/* Reverse parallax (moves opposite to scroll) */
+.parallax-reverse {
+  transform: translateY(calc(var(--scroll-y, 0) * -0.15px));
+}
+
+/* Mouse parallax for background elements */
+.parallax-mouse {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   3. SCROLL-TRIGGER REVEAL ANIMATIONS
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Reveal animation base - Cải thiện để không ảnh hưởng layout */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+.reveal-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reveal from left */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+.reveal-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Reveal from right */
+.reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+.reveal-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Reveal scale */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+.reveal-scale.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger children animation - KHÔNG dùng rotateX để tránh layout shift */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+.stagger-children.is-visible > *:nth-child(1) { transition-delay: 0ms; opacity: 1; transform: translateY(0); }
+.stagger-children.is-visible > *:nth-child(2) { transition-delay: 100ms; opacity: 1; transform: translateY(0); }
+.stagger-children.is-visible > *:nth-child(3) { transition-delay: 200ms; opacity: 1; transform: translateY(0); }
+.stagger-children.is-visible > *:nth-child(4) { transition-delay: 300ms; opacity: 1; transform: translateY(0); }
+.stagger-children.is-visible > *:nth-child(5) { transition-delay: 400ms; opacity: 1; transform: translateY(0); }
+.stagger-children.is-visible > *:nth-child(6) { transition-delay: 500ms; opacity: 1; transform: translateY(0); }
+.stagger-children.is-visible > *:nth-child(7) { transition-delay: 600ms; opacity: 1; transform: translateY(0); }
+.stagger-children.is-visible > *:nth-child(8) { transition-delay: 700ms; opacity: 1; transform: translateY(0); }
+
+/* Blur reveal - giữ nguyên blur effect nhưng không ảnh hưởng layout */
+.reveal-blur {
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(5px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+  will-change: transform, opacity, filter;
+}
+.reveal-blur.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   4. MAGNETIC BUTTON EFFECTS
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.magnetic-btn {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+/* Magnetic pull on hover */
+.magnetic-pull {
+  transition: transform 0.25s cubic-bezier(0.32, 0.72, 0, 1);
+}
+.magnetic-pull:hover {
+  transform: scale(1.05);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   5. SPRING PHYSICS ANIMATIONS
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Spring bounce animation */
+@keyframes spring-bounce {
+  0% { transform: scale(1); }
+  30% { transform: scale(0.95); }
+  50% { transform: scale(1.05); }
+  70% { transform: scale(0.98); }
+  100% { transform: scale(1); }
+}
+.spring-bounce {
+  animation: spring-bounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Spring hover */
+.spring-hover {
+  transition: transform 0.25s ease;
+}
+.spring-hover:hover {
+  transform: scale(1.03);
+}
+.spring-hover:active {
+  transform: scale(0.97);
+}
+
+/* Elastic card */
+.elastic-card {
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.elastic-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 
+    0 30px 60px -15px rgba(59, 130, 246, 0.3),
+    0 0 0 1px rgba(96, 165, 250, 0.3);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   6. DYNAMIC MORPHING SHAPES
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Morphing blob animation */
+@keyframes morph-blob {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  25% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  50% { border-radius: 50% 60% 30% 60% / 30% 60% 70% 40%; }
+  75% { border-radius: 60% 40% 60% 30% / 70% 30% 50% 60%; }
+}
+.morph-blob-animate {
+  animation: morph-blob 8s ease-in-out infinite;
+}
+
+/* Floating morph shape */
+.morph-float {
+  animation: morph-blob 10s ease-in-out infinite, float 6s ease-in-out infinite;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   7. CURSOR TRAIL & GHOST EFFECTS
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Cursor trail dot */
+.cursor-trail {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.6) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease-out, opacity 0.3s ease;
+}
+
+/* Ripple effect base */
+.ripple-container {
+  position: relative;
+  overflow: hidden;
+}
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(0);
+  animation: ripple-expand 0.6s ease-out;
+  pointer-events: none;
+}
+@keyframes ripple-expand {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   8. TYPEWRITER EFFECT
+   ───────────────────────────────────────────────────────────────────────────── */
+
+@keyframes typewriter-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.typewriter-text {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid currentColor;
+  animation: 
+    typewriter 3s steps(40) 1s forwards,
+    typewriter-cursor 0.8s step-end infinite;
+}
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   9. COUNTER ANIMATION
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Number counter */
+.counter-number {
+  font-variant-numeric: tabular-nums;
+  transition: transform 0.3s ease;
+}
+.counter-number.counting {
+  transform: scale(1.1);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   10. MARQUEE INFINITE SCROLL
+   ───────────────────────────────────────────────────────────────────────────── */
+
+@keyframes marquee-smooth {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-smooth {
+  animation: marquee-smooth 30s linear infinite;
+  display: flex;
+  width: max-content;
+}
+.marquee-smooth:hover {
+  animation-play-state: paused;
+}
+
+/* Reverse marquee */
+.marquee-reverse {
+  animation: marquee-smooth 30s linear infinite reverse;
+}
+.marquee-reverse:hover {
+  animation-play-state: paused;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   11. SMOOTH SCROLL & LENIS-LIKE EFFECT
+   ───────────────────────────────────────────────────────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Smooth scroll container */
+.smooth-scroll {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   12. PREMIUM 3D CARD EFFECTS
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Card with inner glow */
+.card-inner-glow {
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.card-inner-glow::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+.card-inner-glow:hover::before {
+  opacity: 1;
+}
+
+/* Premium glass card with highlight */
+.card-glass-premium {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(147, 197, 253, 0.3);
+  box-shadow: 
+    0 8px 32px -8px rgba(59, 130, 246, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.card-glass-premium:hover {
+  transform: translateY(-6px) rotateX(1deg) rotateY(-1deg);
+  box-shadow: 
+    0 20px 40px -10px rgba(59, 130, 246, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 0 0 1px rgba(96, 165, 250, 0.2);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   13. HERO DYNAMIC EFFECTS
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Hero gradient mesh animation */
+@keyframes hero-mesh {
+  0%, 100% { 
+    background-position: 0% 50%;
+  }
+  50% { 
+    background-position: 100% 50%;
+  }
+}
+.hero-mesh-animate {
+  background-size: 400% 400%;
+  animation: hero-mesh 15s ease infinite;
+}
+
+/* Hero text reveal */
+.hero-text-reveal {
+  clip-path: inset(0 100% 0 0);
+  animation: text-reveal 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+@keyframes text-reveal {
+  to { clip-path: inset(0 0 0 0); }
+}
+
+/* Hero floating badge */
+.hero-float-badge {
+  animation: float-rotate 6s ease-in-out infinite;
+}
+@keyframes float-rotate {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   14. DEPTH PARALLAX CARDS
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Multi-layer parallax card */
+.parallax-card {
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+}
+.parallax-card-layer {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.3s ease-out;
+  will-change: transform;
+}
+.parallax-card-layer-1 { transform: translateZ(0px); }
+.parallax-card-layer-2 { transform: translateZ(-10px); }
+.parallax-card-layer-3 { transform: translateZ(-20px); }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   15. NAVIGATION HIGHLIGHT SLIDE
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.nav-highlight-slide {
+  position: relative;
+  overflow: hidden;
+}
+.nav-highlight-slide::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+}
+.nav-highlight-slide:hover::after,
+.nav-highlight-slide.active::after {
+  transform: scaleX(1);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   16. BUTTON CLICK FEEDBACK
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.btn-press-effect {
+  transition: transform 0.15s cubic-bezier(0.32, 0.72, 0, 1);
+}
+.btn-press-effect:hover {
+  transform: translateY(-2px);
+}
+.btn-press-effect:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   17. PREFERS REDUCED MOTION SUPPORT
+   ───────────────────────────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .reveal-up,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale,
+  .reveal-blur,
+  .reveal-max,
+  .reveal-scale-max,
+  .reveal-rotate,
+  .stagger-children > *,
+  .stagger-max > * {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+  
+  .parallax-layer,
+  .parallax-slow,
+  .parallax-medium,
+  .parallax-fast,
+  .parallax-reverse,
+  .parallax-mouse,
+  .parallax-ultra-slow,
+  .parallax-ultra-medium,
+  .parallax-ultra-fast,
+  .parallax-ultra-xfast {
+    transform: none !important;
+  }
+  
+  .morph-blob-animate,
+  .morph-float,
+  .morph-blob-max,
+  .morph-float-max {
+    animation: none !important;
+  }
+  
+  .marquee-smooth,
+  .marquee-reverse {
+    animation: none !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   18. PERFORMANCE OPTIMIZATION
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* GPU acceleration hints */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Will-change optimization for animations */
+.will-animate {
+  will-change: transform, opacity;
+}
+
+/* Disable selection for animated elements */
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   19. SPLINE-STYLE FLOATING ELEMENTS
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Floating orb with subtle animation */
+.floating-orb {
+  animation: orb-float 12s ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes orb-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  33% { transform: translateY(-30px) scale(1.05); }
+  66% { transform: translateY(-15px) scale(0.98); }
+}
+
+/* Orb with rotation */
+.floating-orb-rotate {
+  animation: orb-float-rotate 15s ease-in-out infinite;
+}
+@keyframes orb-float-rotate {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-40px) rotate(180deg); }
+}
+
+/* Pulse orb */
+.pulse-orb {
+  animation: pulse-orb 4s ease-in-out infinite;
+}
+@keyframes pulse-orb {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.15); opacity: 1; }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   20. INTERACTIVE CURSOR EFFECTS (removed)
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   END OF PREMIUM EFFECTS
+   ═══════════════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════════════════════
+   MAXIMUM POWER 2026 - SPLINE/GSAP LEVEL
+   ULTRA 3D, MAXIMUM ANIMATIONS, PREMIUM INTERACTIONS
+   ═══════════════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   21. ULTRA 3D TILT - MAXIMUM PERSPECTIVE
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Ultra 3D Tilt Effect - Cực mạnh */
+.ultra-tilt-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.1s cubic-bezier(0.03, 0.98, 0.52, 0.99);
+  will-change: transform;
+}
+.ultra-tilt-3d:hover {
+  transform: translateZ(30px);
+}
+
+/* CSS-only tilt card — replaces JS MouseTrackingCard for performance */
+.tilt-card {
+  transition: transform 0.25s cubic-bezier(0.03, 0.98, 0.52, 0.99);
+}
+.tilt-card:hover {
+  transform: translateY(-3px) scale(1.01);
+}
+
+/* 3D Card - Subtle lift effect */
+.card-3d-max {
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform, box-shadow;
+}
+.card-3d-max:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 
+    0 12px 32px -8px rgba(59, 130, 246, 0.2),
+    0 0 0 1px rgba(96, 165, 250, 0.15);
+}
+
+/* 3D Depth Layer - Multiple layers */
+.depth-layer-1 { transform: translateZ(0px) scale(1); }
+.depth-layer-2 { transform: translateZ(-15px) scale(0.95); }
+.depth-layer-3 { transform: translateZ(-30px) scale(0.9); }
+.depth-layer-4 { transform: translateZ(-45px) scale(0.85); }
+.depth-layer-5 { transform: translateZ(-60px) scale(0.8); }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   22. CURSOR FOLLOWER MAX - (removed)
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   23. SPRING PHYSICS MAX - Bounce cực mạnh
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Spring MAX */
+.spring-max {
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+.spring-max:hover {
+  transform: scale(1.05) translateY(-3px);
+}
+.spring-max:active {
+  transform: scale(0.96);
+  transition-duration: 0.1s;
+}
+
+/* Elastic Bounce */
+.elastic-bounce {
+  transition: all 0.25s ease;
+  will-change: transform;
+}
+.elastic-bounce:hover {
+  transform: translateY(-3px) scale(1.01);
+}
+
+/* Wobble Effect */
+@keyframes wobble-max {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  10% { transform: translateX(-8px) rotate(-2deg); }
+  20% { transform: translateX(8px) rotate(2deg); }
+  30% { transform: translateX(-6px) rotate(-1.5deg); }
+  40% { transform: translateX(6px) rotate(1.5deg); }
+  50% { transform: translateX(-4px) rotate(-1deg); }
+  60% { transform: translateX(4px) rotate(1deg); }
+  70% { transform: translateX(-2px) rotate(-0.5deg); }
+  80% { transform: translateX(2px) rotate(0.5deg); }
+  90% { transform: translateX(-1px) rotate(-0.25deg); }
+}
+.wobble-hover:hover {
+  animation: wobble-max 0.8s ease-in-out;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   24. PARALLAX MAX - Multi-layer cực mạnh
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Parallax Ultra - Tốc độ cao */
+.parallax-ultra {
+  will-change: transform;
+  transition: transform 0.05s linear;
+}
+.parallax-ultra-slow { transform: translateY(calc(var(--scroll-y, 0) * 0.05px)); }
+.parallax-ultra-medium { transform: translateY(calc(var(--scroll-y, 0) * 0.15px)); }
+.parallax-ultra-fast { transform: translateY(calc(var(--scroll-y, 0) * 0.3px)); }
+.parallax-ultra-xfast { transform: translateY(calc(var(--scroll-y, 0) * 0.5px)); }
+
+/* Mouse Parallax MAX */
+.parallax-mouse-max {
+  transition: transform 0.2s cubic-bezier(0.03, 0.98, 0.52, 0.99);
+  will-change: transform;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   25. REVEAL ANIMATIONS MAX - Stagger cực mạnh
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Reveal MAX - Fade + Scale nhẹ - KHÔNG ảnh hưởng layout */
+.reveal-max {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+.reveal-max.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger MAX - Delay dài hơn, animation mạnh hơn - KHÔNG dùng rotateX để tránh layout shift */
+.stagger-max > * {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+.stagger-max.is-visible > *:nth-child(1) { transition-delay: 0ms; opacity: 1; transform: translateY(0); }
+.stagger-max.is-visible > *:nth-child(2) { transition-delay: 80ms; opacity: 1; transform: translateY(0); }
+.stagger-max.is-visible > *:nth-child(3) { transition-delay: 160ms; opacity: 1; transform: translateY(0); }
+.stagger-max.is-visible > *:nth-child(4) { transition-delay: 240ms; opacity: 1; transform: translateY(0); }
+.stagger-max.is-visible > *:nth-child(5) { transition-delay: 320ms; opacity: 1; transform: translateY(0); }
+.stagger-max.is-visible > *:nth-child(6) { transition-delay: 400ms; opacity: 1; transform: translateY(0); }
+.stagger-max.is-visible > *:nth-child(7) { transition-delay: 480ms; opacity: 1; transform: translateY(0); }
+.stagger-max.is-visible > *:nth-child(8) { transition-delay: 560ms; opacity: 1; transform: translateY(0); }
+.stagger-max.is-visible > *:nth-child(9) { transition-delay: 640ms; opacity: 1; transform: translateY(0); }
+.stagger-max.is-visible > *:nth-child(10) { transition-delay: 720ms; opacity: 1; transform: translateY(0); }
+
+/* Scale Reveal MAX - KHÔNG dùng translateZ để tránh overflow */
+.reveal-scale-max {
+  opacity: 0;
+  transform: scale(0.95) translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+.reveal-scale-max.is-visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Rotate Reveal - KHÔNG dùng perspective để tránh overflow */
+.reveal-rotate {
+  opacity: 0;
+  transform: translateX(-30px) skewX(5deg);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+.reveal-rotate.is-visible {
+  opacity: 1;
+  transform: translateX(0) skewX(0);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   26. MORPHING SHAPES MAX - Blob cực lớn
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Morph Blob MAX - Shape thay đổi mạnh */
+@keyframes morph-blob-max {
+  0%, 100% { border-radius: 40% 60% 30% 70% / 70% 30% 70% 30%; transform: scale(1) rotate(0deg); }
+  20% { border-radius: 60% 40% 70% 30% / 30% 70% 30% 70%; transform: scale(1.1) rotate(5deg); }
+  40% { border-radius: 50% 50% 40% 60% / 60% 40% 60% 40%; transform: scale(0.95) rotate(-3deg); }
+  60% { border-radius: 30% 70% 60% 40% / 40% 30% 70% 60%; transform: scale(1.05) rotate(8deg); }
+  80% { border-radius: 70% 30% 50% 50% / 50% 70% 50% 30%; transform: scale(1.08) rotate(-5deg); }
+}
+.morph-blob-max {
+  animation: morph-blob-max 12s ease-in-out infinite;
+  will-change: transform, border-radius;
+}
+
+/* Morph Float MAX */
+.morph-float-max {
+  animation: morph-blob-max 12s ease-in-out infinite, float 8s ease-in-out infinite;
+  will-change: transform, border-radius;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   27. MAGNETIC EFFECTS MAX
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Magnetic Pull MAX - Hút mạnh về cursor */
+.magnetic-max {
+  transition: transform 0.3s cubic-bezier(0.03, 0.98, 0.52, 0.99);
+  will-change: transform;
+}
+.magnetic-max:hover {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+/* Magnetic Button Effect */
+.magnetic-btn-max {
+  transition: all 0.25s cubic-bezier(0.03, 0.98, 0.52, 0.99);
+  will-change: transform, box-shadow;
+}
+.magnetic-btn-max:hover {
+  transform: scale(1.1);
+  box-shadow: 
+    0 0 40px rgba(59, 130, 246, 0.5),
+    0 0 80px rgba(59, 130, 246, 0.2);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   28. GLOW EFFECTS MAX
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Glow Pulse MAX */
+@keyframes glow-pulse-max {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4), 0 0 40px rgba(59, 130, 246, 0.2);
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.6), 0 0 80px rgba(59, 130, 246, 0.3), 0 0 120px rgba(59, 130, 246, 0.1);
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 40px rgba(59, 130, 246, 0.4);
+  }
+}
+.glow-pulse-max {
+  animation: glow-pulse-max 2s ease-in-out infinite;
+}
+
+/* Neon Glow MAX */
+.neon-glow-max {
+  text-shadow: 
+    0 0 5px rgba(59, 130, 246, 0.8),
+    0 0 10px rgba(59, 130, 246, 0.6),
+    0 0 20px rgba(59, 130, 246, 0.4),
+    0 0 40px rgba(59, 130, 246, 0.2);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   29. INTERACTIVE ELEMENTS MAX
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Hover Lift MAX */
+.hover-lift-max {
+  transition: all 0.25s ease;
+  will-change: transform, box-shadow;
+}
+.hover-lift-max:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 
+    0 12px 28px -8px rgba(59, 130, 246, 0.2),
+    0 0 0 1px rgba(96, 165, 250, 0.15);
+}
+
+/* Press Effect MAX */
+.press-effect-max {
+  transition: transform 0.1s ease;
+}
+.press-effect-max:active {
+  transform: scale(0.95) translateY(2px);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   30. HERO EFFECTS MAX
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Hero Title Reveal - Đơn giản hóa để tránh vấn đề clip-path */
+.hero-title-reveal {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: hero-title-in 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes hero-title-in {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero Subtitle Reveal */
+.hero-subtitle-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: hero-subtitle-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+}
+@keyframes hero-subtitle-in {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero Button Reveal */
+.hero-btn-reveal {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  animation: hero-btn-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.6s forwards;
+}
+@keyframes hero-btn-in {
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   31. FLOATING ANIMATIONS MAX
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Float MAX */
+@keyframes float-max {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-20px) rotate(2deg); }
+  50% { transform: translateY(-10px) rotate(-1deg); }
+  75% { transform: translateY(-25px) rotate(1deg); }
+}
+.float-max {
+  animation: float-max 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Float Slow MAX */
+.float-slow-max {
+  animation: float-max 10s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Rotate Float MAX */
+@keyframes rotate-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-30px) rotate(180deg); }
+}
+.rotate-float-max {
+  animation: rotate-float 15s linear infinite;
+  will-change: transform;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   32. RIPPLE CLICK MAX
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Ripple Effect MAX */
+.ripple-max {
+  position: relative;
+  overflow: hidden;
+}
+.ripple-max::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease-out, height 0.6s ease-out, opacity 0.6s ease-out;
+  opacity: 1;
+}
+.ripple-max:active::after {
+  width: 300px;
+  height: 300px;
+  opacity: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   33. CARD FLIP 3D MAX
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.card-flip-container {
+  perspective: 1500px;
+  transform-style: preserve-3d;
+}
+.card-flip {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.03, 0.98, 0.52, 0.99);
+}
+.card-flip:hover {
+  transform: rotateY(180deg);
+}
+.card-flip-front,
+.card-flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.card-flip-back {
+  transform: rotateY(180deg);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   34. GRADIENT ANIMATIONS MAX
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Gradient Flow MAX */
+@keyframes gradient-flow-max {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.gradient-flow-max {
+  background-size: 300% 300%;
+  animation: gradient-flow-max 6s ease infinite;
+}
+
+/* Shimmer MAX */
+@keyframes shimmer-max {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.shimmer-max {
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255,255,255,0.4) 25%, 
+    rgba(255,255,255,0.8) 50%, 
+    rgba(255,255,255,0.4) 75%, 
+    transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer-max 2s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   35. PARTICLE EFFECTS MAX
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Particle Rise MAX */
+@keyframes particle-rise-max {
+  0% { 
+    transform: translateY(0) scale(1); 
+    opacity: 0; 
+  }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.3; }
+  100% { 
+    transform: translateY(-200px) scale(0.5); 
+    opacity: 0; 
+  }
+}
+.particle-rise-max {
+  animation: particle-rise-max 6s ease-in infinite;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   36. PERFORMANCE & MOBILE
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Disable heavy effects on touch devices */
+@media (hover: none) {
+  
+  .ultra-tilt-3d:hover,
+  .card-3d-max:hover,
+  .elastic-bounce:hover,
+  .hover-lift-max:hover,
+  .card-flip:hover {
+    transform: none;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .stagger-max > *,
+  .stagger-children > * {
+    transition-delay: 0ms !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  .reveal-max,
+  .reveal-up,
+  .reveal-scale-max,
+  .reveal-blur {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+  
+  .parallax-ultra-slow,
+  .parallax-ultra-medium,
+  .parallax-ultra-fast,
+  .parallax-ultra-xfast {
+    transform: none !important;
+  }
+  
+  /* Disable 3D effects on mobile for performance */
+  .card-3d-max:hover,
+  .ultra-tilt-3d:hover {
+    transform: none !important;
+  }
+  
+  .spring-max:hover,
+  .elastic-bounce:hover {
+    transform: scale(1.02) !important;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   PREMIUM 2026 — NEW EFFECTS (Spline + GSAP + Apple + Stripe style)
+   Additive only — không thay thế bất kỳ thứ gì hiện có
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── FIX: cursor-follower-ring & cursor-follower-dot (removed — no longer used) ── */
+
+/* ── MAGIC CARD GLOW (Stripe / Linear / Vercel style) ── */
+/* JS sets --mouse-x, --mouse-y as % on the element */
+.magic-card-glow {
+  position: relative;
+  overflow: hidden;
+}
+.magic-card-glow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    280px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(59, 130, 246, 0.13) 0%,
+    rgba(96, 165, 250, 0.06) 40%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+.magic-card-glow:hover::before {
+  opacity: 1;
+}
+
+/* ── CARD GLARE (Apple product page style) ── */
+/* JS sets --glare-x, --glare-y as % on the element */
+.card-glare {
+  position: relative;
+  overflow: hidden;
+}
+.card-glare::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    180px circle at var(--glare-x, 50%) var(--glare-y, 30%),
+    rgba(255, 255, 255, 0.22) 0%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+.card-glare:hover::after {
+  opacity: 1;
+}
+
+/* ── BORDER BEAM (Magic UI style — conic gradient rotating border) ── */
+@property --beam-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes border-beam-spin {
+  to { --beam-angle: 360deg; }
+}
+.border-beam {
+  position: relative;
+  overflow: hidden;
+}
+.border-beam::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--beam-angle),
+    transparent 0%,
+    transparent 65%,
+    rgba(59, 130, 246, 0.7) 75%,
+    rgba(147, 197, 253, 0.9) 80%,
+    rgba(59, 130, 246, 0.7) 85%,
+    transparent 95%
+  );
+  animation: border-beam-spin 3s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+.border-beam > * {
+  position: relative;
+  z-index: 1;
+}
+/* Slower variant for subtle cards */
+.border-beam-slow::before {
+  animation-duration: 6s;
+}
+/* Pause on hover */
+.border-beam-hover::before {
+  animation-play-state: paused;
+}
+.border-beam-hover:hover::before {
+  animation-play-state: running;
+}
+
+/* ── LIQUID MESH GRADIENT (Spline hero background style) ── */
+@keyframes liquid-drift-1 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33%       { transform: translate(30px, -20px) scale(1.05); }
+  66%       { transform: translate(-20px, 15px) scale(0.97); }
+}
+@keyframes liquid-drift-2 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33%       { transform: translate(-25px, 20px) scale(1.08); }
+  66%       { transform: translate(20px, -15px) scale(0.95); }
+}
+@keyframes liquid-drift-3 {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  50%       { transform: translate(15px, 25px) scale(1.06); }
+}
+.liquid-mesh-1 {
+  animation: liquid-drift-1 18s ease-in-out infinite;
+  will-change: transform;
+}
+.liquid-mesh-2 {
+  animation: liquid-drift-2 22s ease-in-out infinite;
+  will-change: transform;
+}
+.liquid-mesh-3 {
+  animation: liquid-drift-3 15s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* ── CSS 3D RING (Spline floating shape style) ── */
+@keyframes ring-rotate-3d {
+  from { transform: perspective(500px) rotateX(65deg) rotateZ(0deg); }
+  to   { transform: perspective(500px) rotateX(65deg) rotateZ(360deg); }
+}
+@keyframes ring-float-3d {
+  0%, 100% { transform: perspective(500px) rotateX(65deg) rotateZ(0deg) translateY(0px); }
+  50%       { transform: perspective(500px) rotateX(65deg) rotateZ(180deg) translateY(-12px); }
+}
+.css-3d-ring {
+  border-radius: 50%;
+  border: 2px solid rgba(59, 130, 246, 0.35);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.15), inset 0 0 20px rgba(59, 130, 246, 0.08);
+  animation: ring-float-3d 12s ease-in-out infinite;
+  will-change: transform;
+  pointer-events: none;
+}
+.css-3d-ring-2 {
+  border-radius: 50%;
+  border: 1.5px solid rgba(96, 165, 250, 0.25);
+  animation: ring-float-3d 18s ease-in-out infinite reverse;
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* ── WORD-BY-WORD REVEAL (GSAP SplitText style) ── */
+@keyframes word-reveal-up {
+  from { opacity: 0; transform: translateY(22px); filter: blur(3px); }
+  to   { opacity: 1; transform: translateY(0);    filter: blur(0); }
+}
+.split-word {
+  display: inline-block;
+  opacity: 0;
+  animation: word-reveal-up 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+/* Delay variants for stagger */
+.split-word-d0  { animation-delay: 0ms; }
+.split-word-d1  { animation-delay: 80ms; }
+.split-word-d2  { animation-delay: 160ms; }
+.split-word-d3  { animation-delay: 240ms; }
+.split-word-d4  { animation-delay: 320ms; }
+.split-word-d5  { animation-delay: 400ms; }
+.split-word-d6  { animation-delay: 480ms; }
+.split-word-d7  { animation-delay: 560ms; }
+.split-word-d8  { animation-delay: 640ms; }
+.split-word-d9  { animation-delay: 720ms; }
+.split-word-d10 { animation-delay: 800ms; }
+
+/* ── MORPHING SHAPE (Spline background decoration) ── */
+@keyframes morph-shape-bg {
+  0%   { clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); opacity: 0.06; }
+  25%  { clip-path: polygon(50% 0%, 100% 50%, 100% 100%, 0% 100%, 0% 50%); opacity: 0.09; }
+  50%  { clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); opacity: 0.07; }
+  75%  { clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%); opacity: 0.1; }
+  100% { clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); opacity: 0.06; }
+}
+.morph-shape-bg {
+  animation: morph-shape-bg 14s ease-in-out infinite;
+  will-change: clip-path, opacity;
+  pointer-events: none;
+}
+
+/* ── NUMBER TICKER (counter animation khi scroll vào) ── */
+@keyframes ticker-pop {
+  0%   { transform: translateY(8px) scale(0.95); opacity: 0; }
+  60%  { transform: translateY(-3px) scale(1.04); opacity: 1; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+.number-ticker {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+  transition: transform 0.15s ease;
+}
+.number-ticker.is-counting {
+  animation: ticker-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ── SHIMMER BUTTON CONTINUOUS (Magic UI shimmer button) ── */
+@keyframes shimmer-btn-sweep {
+  0%   { transform: translateX(-120%) skewX(-15deg); }
+  100% { transform: translateX(220%)  skewX(-15deg); }
+}
+.shimmer-btn {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.28), transparent);
+  animation: shimmer-btn-sweep 2.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ── PULSATING BUTTON (Magic UI pulsating button) ── */
+@keyframes btn-pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.55); }
+  70%  { box-shadow: 0 0 0 12px rgba(59, 130, 246, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+}
+.pulsating-btn {
+  animation: btn-pulse-ring 2.2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+/* ── NAV HIGHLIGHT SLIDE (Stripe nav style — apply to Header) ── */
+.nav-slide-item {
+  position: relative;
+}
+.nav-slide-item::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 50%;
+  width: 0; height: 2px;
+  background: linear-gradient(90deg, #3b82f6, #38bdf8);
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: width 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+}
+.nav-slide-item:hover::after,
+.nav-slide-item.active::after {
+  width: 80%;
+}
+
+/* ── SCROLL REVEAL — IntersectionObserver driven (GSAP ScrollTrigger style) ── */
+/* Thêm class này vào elements, JS sẽ thêm .in-view khi vào viewport */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+.scroll-reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+.scroll-reveal-left {
+  opacity: 0;
+  transform: translateX(-28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+.scroll-reveal-left.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+.scroll-reveal-scale {
+  opacity: 0;
+  transform: scale(0.94);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+.scroll-reveal-scale.in-view {
+  opacity: 1;
+  transform: scale(1);
+}
+/* Stagger delays cho scroll-reveal children */
+.scroll-stagger > *:nth-child(1)  { transition-delay: 0ms; }
+.scroll-stagger > *:nth-child(2)  { transition-delay: 80ms; }
+.scroll-stagger > *:nth-child(3)  { transition-delay: 160ms; }
+.scroll-stagger > *:nth-child(4)  { transition-delay: 240ms; }
+.scroll-stagger > *:nth-child(5)  { transition-delay: 320ms; }
+.scroll-stagger > *:nth-child(6)  { transition-delay: 400ms; }
+.scroll-stagger > *:nth-child(7)  { transition-delay: 480ms; }
+.scroll-stagger > *:nth-child(8)  { transition-delay: 560ms; }
+.scroll-stagger > *:nth-child(9)  { transition-delay: 640ms; }
+.scroll-stagger > *:nth-child(10) { transition-delay: 720ms; }
+
+/* ── DEPTH PARALLAX MOUSE LAYERS (Spline depth style) ── */
+/* JS sets --mx (normalized -1 to 1) and --my on parent */
+.parallax-mouse-layer-1 {
+  transition: transform 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+  transform: translate(
+    calc(var(--mx, 0) * 8px),
+    calc(var(--my, 0) * 6px)
+  );
+}
+.parallax-mouse-layer-2 {
+  transition: transform 0.18s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+  transform: translate(
+    calc(var(--mx, 0) * 16px),
+    calc(var(--my, 0) * 12px)
+  );
+}
+.parallax-mouse-layer-3 {
+  transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+  transform: translate(
+    calc(var(--mx, 0) * 26px),
+    calc(var(--my, 0) * 20px)
+  );
+}
+/* Reverse direction (counter-parallax) */
+.parallax-mouse-reverse {
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+  transform: translate(
+    calc(var(--mx, 0) * -10px),
+    calc(var(--my, 0) * -8px)
+  );
+}
+
+/* ── RIPPLE CLICK EFFECT ── */
+@keyframes ripple-out {
+  from { transform: translate(-50%, -50%) scale(0); opacity: 0.5; }
+  to   { transform: translate(-50%, -50%) scale(4); opacity: 0; }
+}
+.ripple-click-effect {
+  position: absolute;
+  border-radius: 50%;
+  width: 80px; height: 80px;
+  background: rgba(255, 255, 255, 0.35);
+  animation: ripple-out 0.55s ease-out forwards;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* ── MAGNETIC BUTTON WRAPPER ── */
+.magnetic-wrap {
+  display: inline-block;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+/* ── TYPEWRITER CURSOR ── */
+@keyframes tw-cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+.typewriter-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: currentColor;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: tw-cursor-blink 0.85s step-end infinite;
+}
+
+/* ── ORBITING ELEMENT (Spline orbiting circles style) ── */
+@keyframes orbit-cw {
+  from { transform: rotate(0deg) translateX(var(--orbit-r, 60px)) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(var(--orbit-r, 60px)) rotate(-360deg); }
+}
+@keyframes orbit-ccw {
+  from { transform: rotate(0deg) translateX(var(--orbit-r, 80px)) rotate(0deg); }
+  to   { transform: rotate(-360deg) translateX(var(--orbit-r, 80px)) rotate(360deg); }
+}
+.orbit-cw  { animation: orbit-cw  var(--orbit-dur, 12s) linear infinite; }
+.orbit-ccw { animation: orbit-ccw var(--orbit-dur, 16s) linear infinite; }
+
+/* ── GLOW BORDER ON HOVER (premium card border) ── */
+.glow-border-hover {
+  border: 1px solid rgba(147, 197, 253, 0.3);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.glow-border-hover:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow:
+    0 0 0 1px rgba(59, 130, 246, 0.15),
+    0 0 20px rgba(59, 130, 246, 0.12),
+    0 8px 32px -8px rgba(59, 130, 246, 0.2);
+}
+
+/* ── PREFERS REDUCED MOTION — tất cả effects mới ── */
+@media (prefers-reduced-motion: reduce) {
+  .split-word,
+  .number-ticker,
+  .shimmer-btn::before,
+  .pulsating-btn,
+  .border-beam::before,
+  .liquid-mesh-1, .liquid-mesh-2, .liquid-mesh-3,
+  .css-3d-ring, .css-3d-ring-2,
+  .morph-shape-bg,
+  .orbit-cw, .orbit-ccw {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+  .scroll-reveal, .scroll-reveal-left, .scroll-reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .magic-card-glow::before,
+  .card-glare::after {
+    display: none !important;
+  }
+}
+
+/* ── MOBILE — disable heavy mouse effects ── */
+@media (hover: none) {
+  .magic-card-glow::before,
+  .card-glare::after {
+    display: none !important;
+  }
+  .parallax-mouse-layer-1,
+  .parallax-mouse-layer-2,
+  .parallax-mouse-layer-3,
+  .parallax-mouse-reverse {
+    transform: none !important;
+  }
+}
+/* ═══════════════════════════════════════════════════════════════════════
+   END NEW EFFECTS 2026
+   ═══════════════════════════════════════════════════════════════════════ */

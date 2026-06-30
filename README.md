@@ -12,7 +12,7 @@
 
 ![Project](https://img.shields.io/badge/Project-Graduation%20Thesis-7C3AED?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Completed-22C55E?style=for-the-badge)
-![Language](https://img.shields.io/badge/Language-Vietnamese-EF4444?style=for-the-badge)
+![Language](https://img.shields.io/badge/Language-English-EF4444?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-Academic%20Use-F59E0B?style=for-the-badge)
 
 <br/>
